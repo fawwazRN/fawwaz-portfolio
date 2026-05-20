@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "tailwind-scrollbar-hide/v4";
+
+@theme {
+  --color-utama: #b98b67;
+  --font-jakarta: "Plus Jakarta Sans";
+}
