@@ -80,7 +80,7 @@ export default function Header() {
   return (
     <>
       {/* ==================== DESKTOP SIDEBAR (Fixed Left) ==================== */}
-      <header className="hidden top-0 left-0 z-50 fixed md:flex flex-col justify-between bg-slate-950/80 backdrop-blur-xl border-white/5 border-r w-20 lg:w-64 h-screen font-jakarta">
+      <header className="hidden top-0 left-0 z-50 fixed md:flex flex-col justify-between bg-slate-950/80 backdrop-blur-xl border-white/5 border-r w-20 lg:w-50 h-screen font-jakarta">
         <div className="flex flex-col items-center lg:items-start p-6 border-white/5 border-b">
           <a href="#" className="group flex items-center gap-3">
             <div className="flex justify-center items-center bg-utama rounded-xl w-10 h-10 font-black text-white text-lg group-hover:rotate-6 transition-transform">
