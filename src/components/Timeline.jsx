@@ -25,7 +25,7 @@ export default function Timeline() {
   // ================= DATA =================
   const timelineData = [
     {
-      year: "2021",
+      year: "2029",
       title: "Awal Minat IT",
       desc: "Mulai tertarik mendalami dunia teknologi informasi dan belajar pemrograman dasar secara mandiri.",
       icon: Laptop,
@@ -39,14 +39,14 @@ export default function Timeline() {
       color: "#3b82f6", // Blue
     },
     {
-      year: "2023",
+      year: "2024",
       title: "Proyek Pertama",
       desc: "Mengerjakan proyek kolaboratif seperti Indotravel dan Webkita sebagai implementasi skill.",
       icon: Code,
       color: "#8b5cf6", // Purple
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Pengembangan Diri",
       desc: "Membangun Portfolio pribadi, Eduverse, dan aktif dalam berbagai proyek IT kelas 10.",
       icon: Rocket,
@@ -248,9 +248,13 @@ export default function Timeline() {
                   // PENTING: class 'group' dipindah sini biar bisa kontrol anak2nya
                   className={`relative w-full md:w-1/2 ${isLeft ? "md:pr-12" : "md:pl-12 md:ml-auto"} group z-20`}
                   style={{ perspective: "1000px" }}>
-                  {/* Icon/Logo (Hidden by default, show on hover) */}
+                  {/* Icon/Logo */}
+                  {/* LOGIC PERUBAHAN: 
+                      1. Mobile: opacity-100 (Langsung kelihatan)
+                      2. Desktop: md:opacity-0 (Hide default), md:group-hover:opacity-100 (Muncul saat hover)
+                  */}
                   <div
-                    className="top-0 left-6 md:left-0 z-30 absolute flex justify-center items-center opacity-0 group-hover:opacity-100 rounded-full w-12 h-12 transition-all md:-translate-x-1/2 duration-500 transform"
+                    className="top-6 md:top-0 left-6 md:left-0 z-30 absolute flex justify-center items-center opacity-100 md:group-hover:opacity-100 md:opacity-0 rounded-full w-12 h-12 transition-all md:-translate-x-1/2 duration-500 transform"
                     style={{
                       backgroundColor:
                         activeIndex === index ? item.color : "#1e293b",
@@ -264,21 +268,25 @@ export default function Timeline() {
 
                   {/* Card Content */}
                   <div
-                    className="group/card relative bg-slate-900/80 backdrop-blur-md ml-20 md:ml-0 p-8 border border-white/10 hover:border-utama/30 rounded-3xl overflow-visible transition-all duration-500"
+                    className="group/card relative bg-slate-900/80 backdrop-blur-md ml-20 md:ml-0 p-6 md:p-8 border border-white/10 hover:border-utama/30 rounded-3xl overflow-visible transition-all duration-500"
                     style={{
                       boxShadow:
                         activeIndex === index
                           ? `0 30px 60px -10px ${item.color}20`
                           : "none",
                     }}>
-                    {/* Year (Hidden by default, show on hover) */}
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="opacity-0 group-hover:opacity-100 font-black text-white/10 group-hover:text-white/20 text-4xl transition-colors duration-300">
+                    {/* Year */}
+                    {/* LOGIC PERUBAHAN: 
+                      1. Mobile: opacity-100 & text-white/20 (Kelihatan)
+                      2. Desktop: md:opacity-0 (Hide), md:group-hover:opacity-100 (Muncul saat hover)
+                    */}
+                    <div className="flex items-center gap-3 mb-2 md:mb-4">
+                      <span className="opacity-100 md:group-hover:opacity-100 md:opacity-0 font-black text-white/20 md:group-hover:text-white/20 md:text-white/10 text-2xl md:text-4xl transition-colors duration-300">
                         {item.year}
                       </span>
                     </div>
 
-                    <h3 className="mb-4 font-bold text-white text-2xl">
+                    <h3 className="mb-3 md:mb-4 font-bold text-white text-xl md:text-2xl">
                       {item.title}
                     </h3>
 

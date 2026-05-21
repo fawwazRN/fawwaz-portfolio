@@ -138,7 +138,7 @@ export default function Header() {
 
         <div className="p-6 border-white/5 border-t">
           <div className="hidden lg:flex flex-col gap-2 text-slate-400">
-            <p className="text-[10px]">© 2024 Fawwaz</p>
+            <p className="text-[10px]">© 2026 Fawwaz</p>
             <p className="text-[10px]">Built with Passion</p>
           </div>
           <div className="lg:hidden flex justify-center">
